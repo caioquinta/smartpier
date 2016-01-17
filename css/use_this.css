@@ -6,10 +6,31 @@ canvas {
 
 .menu-wrapper {
 	position: relative;
-	background-color: #3BBFEB;
 	text-align: center;
 }
 
+.menu-wrapper .panel{
+	border: 0px;
+}
+
+.menu-wrapper .panel-heading-body{
+	border-radius: 25px;
+	border: 2px solid #59B9D9;
+}
+
+.menu-wrapper .panel-heading{
+	border-radius: 25px;
+
+}
+
+.btn {
+	width: 90%;
+}
+
+.acessory-itens {
+	margin: 5px;
+}
+
 .menu-wrapper button {
-		margin: 5px;
-	}
+	margin: 5px;
+}
