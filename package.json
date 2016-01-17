@@ -1,0 +1,13 @@
+{
+  "name": "nodemailer",
+  "description": "nodemailer test app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts" : {
+    "start" : "node Server.js"
+  },
+  "dependencies": {
+    "nodemailer": "latest",
+    "express" : "latest"
+  }
+}

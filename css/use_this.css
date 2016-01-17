@@ -1,0 +1,14 @@
+
+canvas {
+	background-color: #86D3EC;
+}
+
+
+.menu-wrapper {
+	position: relative;
+	text-align: center;
+}
+
+.menu-wrapper button {
+		margin: 5px;
+	}
