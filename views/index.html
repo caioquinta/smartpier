@@ -15,8 +15,9 @@
   <script src="lib/test_email.js"></script>
   <script src="https://fb.me/react-0.14.6.min.js"></script>
   <script src="https://fb.me/react-dom-0.14.6.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
   <script src="lib/JSXTransformer.js"></script>
-  <script  type="text/jsx" src="lib/acessories.js"></script>
+  <script src="lib/acessory_item.js" type="text/babel" ></script>
 
 </head>
 <body onload="init()"  >
@@ -30,11 +31,14 @@
       </div>
       <div class="col-lg-2"> 
         <div  class="menu-wrapper" >
-          <button class="btn btn-success" type="submit" onClick="exportAndView()">Salvar como imagem</button>
+          <h4> Acessórios </h4>
+          <div id='menu-buttons' >
+          </div>
         </div>
       </div>
       <div class="col-lg-5">
-        <div id= "acessory-item"> </div>
+        <div id= "acessory-itens"> </div>
+        <button class="btn btn-success" type="submit" onClick="exportAndView()">Salvar como imagem</button>
         <div id= "screenshot"> </div>
       </div>
     </div>
