@@ -23,14 +23,16 @@ canvas {
 
 }
 
-.menu-wrapper .btn {
+.menu-wrapper button {
 	width: 90%;
+	margin: 5px;
 }
 
 .acessory-itens {
 	margin: 5px;
 }
 
-.menu-wrapper button {
-	margin: 5px;
+.next {
+	width: 100%;
+
 }
