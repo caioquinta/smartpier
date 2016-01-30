@@ -1,6 +1,6 @@
 {
   "name": "nodemailer",
-  "description": "nodemailer test app",
+  "description": "smartpier pier builder",
   "version": "0.0.1",
   "private": true,
   "scripts" : {
@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "nodemailer": "latest",
-    "express" : "latest",
-    "browserify": "latest"
+    "express" : "latest"
   }
 }
