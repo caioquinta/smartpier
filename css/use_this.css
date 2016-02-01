@@ -61,7 +61,7 @@ canvas:hover {
 	cursor: pointer; 
 }
 
-.next {
+.sucess {
 	width: 100%;
 	font-size: 25px;
 	background-color: #2EC944;
@@ -69,4 +69,17 @@ canvas:hover {
 
 .next span {
 	margin-left: 10px;
+}
+
+.preview-img {
+	width: 80%;
+	border: 5px solid #2E65C9;
+}
+
+
+.order-wrapper {
+	margin-top: 500px;
+}
+
+.order-wrapper form input{
 }
