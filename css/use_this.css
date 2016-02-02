@@ -18,6 +18,7 @@ canvas:hover {
 .menu-wrapper {
 	position: relative;
 	text-align: center;
+
 }
 
 .menu-wrapper .panel{
@@ -37,6 +38,14 @@ canvas:hover {
 
 .menu-wrapper .panel-heading .panel-title{
 	font-size: 20px;
+}
+
+.menu-wrapper .panel-body {
+	background-color: #F2F2F2;
+	margin-top: 10px;
+	border-radius: 25px;
+	border: 1px solid #2E65C9;
+
 }
 
 .menu-wrapper button {
