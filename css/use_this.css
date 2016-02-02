@@ -12,6 +12,7 @@ canvas:hover {
 
 .page-header h1 {
 	color: #2E65C9;
+
 }
 
 .menu-wrapper {
@@ -75,16 +76,35 @@ canvas:hover {
 	width: 80%;
 }
 
-
 .order-wrapper {
 	margin-top: 300px;
+	background-color: #F2F2F2;
+	border-radius: 25px;
+	padding-bottom: 10px;
 }
 
 .order-wrapper form input{
 	margin: 5px;
 }
 
+.order-itens {
+	background-color: white;
+	font-style: italic;
+	border-radius: 15px;
+	border: 2px solid #D6D6D6;
+
+}
+
 h4 {
 	text-align: center;
 }
 
+.footer {
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  height: 60px;
+  margin-top: 20px;
+  background-color: #D6B06F;
+}
