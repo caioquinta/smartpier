@@ -73,13 +73,18 @@ canvas:hover {
 
 .preview-img {
 	width: 80%;
-	border: 5px solid #2E65C9;
 }
 
 
 .order-wrapper {
-	margin-top: 500px;
+	margin-top: 300px;
 }
 
 .order-wrapper form input{
+	margin: 5px;
 }
+
+h4 {
+	text-align: center;
+}
+
