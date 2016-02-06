@@ -3,11 +3,12 @@
   "description": "smartpier pier builder",
   "version": "0.0.1",
   "private": true,
-  "scripts" : {
-    "start" : "node Server.js"
+  "scripts": {
+    "start": "node Server.js"
   },
   "dependencies": {
-    "nodemailer": "latest",
-    "express" : "latest"
+    "body-parser": "^1.14.2",
+    "express": "latest",
+    "nodemailer": "latest"
   }
 }
