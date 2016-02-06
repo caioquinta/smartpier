@@ -45,7 +45,10 @@ sendorder = function(req) {
       to: req.body.email, // list of receivers
       subject: 'Solicitação de Pedido ✔', // Subject line
       text: 'Solicitação do Pedido', // plaintext body
-      html: '<h3>Dados do Cliente</h3><table><tr><td>Nome:</td><td>'+req.body.name+'</td></tr><tr><td>E-mail:</td><td>'+req.body.email+'</td></tr><tr><td>Endereço:</td><td>'+req.body.address+'</td></tr><td>Telefone:</td><td>'+req.body.phone+'</td></tr></table><h3>Resumo do pedido</h3>'+ orderItens(req) +'<img src='+ req.body.pier_image +'/>'//htmlbody
+      html: '<h3>Dados do Cliente</h3><table><tr><td>Nome:</td><td>'+req.body.name+'</td></tr><tr><td>E-mail:</td><td>'+req.body.email+'</td></tr><tr><td>Endereço:</td><td>'+req.body.address+'</td></tr><td>Telefone:</td><td>'+req.body.phone+'</td></tr></table><h3>Resumo do pedido</h3>'+ orderItens(req),
+      attachments: [{   // data uri as an attachment 
+        path: req.body.pier_image
+      }]
     };
 
   // send mail with defined transport object
