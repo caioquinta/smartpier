@@ -62,7 +62,7 @@ sendorder = function(req) {
 orderItens = function(req) {
   itens_list = '';
   for (var i in req.body.itens) {
-    itens_list = itens_list + '<tr><td>'+req.body.itens[i]+'</td></tr>'
+    itens_list = itens_list + '<tr><td style = "font-style = italic;">'+req.body.itens[i].name+' quantidade:'+ req.body.itens[i].qtd + '</td></tr>'
   }
   return itens_list
 }

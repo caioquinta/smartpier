@@ -24,16 +24,32 @@
 </head>
 <body>
   <div>
-    <div class="header-wrapper">
-      <h1>Editor de piers: <small>construa seu pier e solicite um orçamento!</small></h1>
+    <div class=" col-lg-12 header-wrapper">
+      <div class="col-lg-8">
+        <h1>Construtor de Piers: <small>construa seu pier e solicite um orçamento!</small></h1>
+      </div>
+      <div class= 'col-lg-4'>
+        <img src='/img/logo-smart-pier-peq.png' />
+      </div>
     </div>
   </div>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-5"> 
+    <div class="draw-pier-wrapper row">
+      <h2> 1º passo: Desenhe seu Pier </h2>
+      <div class="col-lg-5 col-lg-push-1"> 
         <canvas  width="550" height="500" id="canvas"></canvas>
       </div>
-      <div class="col-lg-2"> 
+      <div class= "col-lg-5 col-lg-push-1">
+        <h3> Instruções </h3>
+        <p> Duplo-clique para rotacionar</p>
+        <p> Clique e arraste para mover </p>
+        <div id= "select-acessories"></div>
+      </div>
+    </div>
+    <hr>
+    <div class="acessory-wrapper row">
+      <h2> 2º passo: Escolha os Acessórios </h2>
+      <div class="col-lg-4 col-lg-push-1"> 
         <div  class="menu-wrapper" >
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -45,7 +61,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-5">
+      <div class="col-lg-5 col-lg-push-2">
         <div class="panel panel-default list-wrapper">
            <div class="panel-heading">
               <h3 class="panel-title">Acessórios Selecionados</h3>
@@ -59,9 +75,17 @@
     </div>
     <hr>
     <div class="order-wrapper row">
+      <h2> 3º passo: Preencha seus dados Pessoais </h2>
       <div id= "confirm-order"> </div>
     </div>
+    <hr>
+    <div class="finished-wrapper row">
+      <h2>Orçamento Enviado! Entraremos em contato assim que possível, obrigado!</h2>
+      <span class="col-lg-push-5 col-lg-6 glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+    </div>
+
   </div>
+  <hr>
 <footer class= "footer">
   <div class= "container">
       <h4>Smartpier 2016 - Todos os Direitos Reservados</h4>
