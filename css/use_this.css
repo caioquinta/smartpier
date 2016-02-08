@@ -10,15 +10,24 @@ canvas:hover {
 	cursor: pointer; 
 }
 
-.page-header h1 {
-	color: #2E65C9;
+.header-wrapper {
+	background-color: #2E65C9;
+	padding: 10px 0px 10px 10px;
+	margin: 0px 0px 30px 0px;
+}
 
+.header-wrapper h1 {
+	color: white;
+}
+
+.header-wrapper small {
+	color: white;
+	font-style: italic;	
 }
 
 .menu-wrapper {
 	position: relative;
 	text-align: center;
-
 }
 
 .menu-wrapper .panel{
@@ -59,16 +68,25 @@ canvas:hover {
 	margin: 5px;
 }
 
+.acessory-item {
+	font-size: 18px;
+}
+
 .acessory-item .glyphicon {
 	color: #2E65C9;
 }
 
-.qtd-btn {
-	margin-left: 10px;
+.acessory-item .glyphicon-remove {
+	color: red;
 }
+
 
 .qtd-btn:hover {
 	cursor: pointer; 
+}
+
+.remove-btn:hover {
+	cursor: pointer; 	
 }
 
 .sucess {
@@ -110,6 +128,11 @@ h4 {
 	text-align: center;
 }
 
+hr {
+	border: 1px solid #2E65C9;
+
+}
+
 .footer {
   bottom: 0;
   width: 100%;
@@ -117,5 +140,5 @@ h4 {
   text-align: center;
   height: 60px;
   margin-top: 20px;
-  background-color: #D6B06F;
+  background-color: #2E65C9;
 }
