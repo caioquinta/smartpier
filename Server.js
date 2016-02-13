@@ -29,9 +29,7 @@ app.post('/sendorder', function (req, res) {
 app.use("/",router);
 app.use(express.static(__dirname + '/'));
 
-app.listen(3000,function(){
-  console.log("Live at Port 3000");
-});
+app.listen(process.env.PORT || 5000);
 
 sendorder = function(req) {
   var nodemailer = require('nodemailer');
@@ -62,7 +60,7 @@ sendorder = function(req) {
 orderItens = function(req) {
   itens_list = '';
   for (var i in req.body.itens) {
-    itens_list = itens_list + '<tr><td style = "font-style = italic;">'+req.body.itens[i].name+'     x'+ req.body.itens[i].qtd + '</td></tr>'
+    itens_list = itens_list + '<tr><td style = "font-style = italic;">'+req.body.itens[i].name+'          qtd:'+ req.body.itens[i].qtd + '</td></tr>'
   }
   return itens_list
 }
@@ -70,7 +68,7 @@ orderItens = function(req) {
 orderPiers = function(req) {
   piers_list = '';
   for (var i in req.body.piers_selected) {
-    piers_list = piers_list + '<tr><td style = "font-style = italic;">'+req.body.piers_selected[i].name+'     x'+ req.body.piers_selected[i].qtd + '</td></tr>'
+    piers_list = piers_list + '<tr><td style = "font-style = italic;">'+req.body.piers_selected[i].name+'          qtd:'+ req.body.piers_selected[i].qtd + '</td></tr>'
   }
   return piers_list
 }
