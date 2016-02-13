@@ -100,6 +100,11 @@ canvas:hover {
 	background-color: #2EC944;
 }
 
+.up {
+	width: 100%;
+	font-size: 25px;
+}
+
 .next span {
 	margin-left: 10px;
 }
@@ -150,4 +155,9 @@ hr {
   height: 60px;
   margin-top: 20px;
   background-color: #2E65C9;
+}
+
+
+.glyphicon-ok-sign {
+	margin-left: 30px;
 }
