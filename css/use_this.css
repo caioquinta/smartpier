@@ -4,6 +4,10 @@ body {
 
 canvas {
 	background-color: #0E00A8;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
 }
 
 canvas:hover {
@@ -142,9 +146,11 @@ hr {
 }
 
 .finished-wrapper .glyphicon {
-	margin-top: 40px;
 	font-size: 180px;
 	color: #2EC944;
+	display: block;
+  width: 100%;
+  margin: 40px auto 25px auto;
 }
 
 .footer {
