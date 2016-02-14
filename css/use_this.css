@@ -15,6 +15,10 @@ canvas:hover {
 	font-size: 18px;
 }
 
+.panel-heading {
+	margin-bottom: 25px;
+}
+
 .header-wrapper {
 	background-color: #2E65C9;
 	padding: 10px 0px 10px 10px;
@@ -37,11 +41,6 @@ canvas:hover {
 
 .menu-wrapper .panel{
 	border: 0px;
-}
-
-.menu-wrapper .panel-heading-body{
-	border-radius: 25px;
-	border: 2px solid #2E65C9;
 }
 
 .menu-wrapper .panel-heading{
@@ -67,6 +66,10 @@ canvas:hover {
 	margin: 5px;
 	background-color: #2E65C9;
 	font-size: 15px;
+}
+
+.list-wrapper .panel-heading {
+	margin-bottom: 0px;
 }
 
 .acessory-itens {
@@ -110,19 +113,16 @@ canvas:hover {
 }
 
 .preview-img {
-	width: 80%;
-}
-
-.order-wrapper {
-	background-color: #F2F2F2;
-	border-radius: 25px;
-	padding-bottom: 10px;
-	margin-right: initial;
-	margin-left: initial;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  width: 100%;
 }
 
 .order-wrapper form input{
 	margin: 5px;
+	width: 90%;
 }
 
 .order-itens {
@@ -156,7 +156,6 @@ hr {
   margin-top: 20px;
   background-color: #2E65C9;
 }
-
 
 .glyphicon-ok-sign {
 	margin-left: 30px;

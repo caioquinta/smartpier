@@ -5,11 +5,10 @@
   <title>Editor de Pier </title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="lib/jquery-1.12.0.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
   <link   href="css/bootstrap.min.css" rel="stylesheet">
   <link   href="css/use_this.css" rel="stylesheet">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="lib/utils.js"></script>
   <script src="lib/editor_logic.js"></script>
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -35,23 +34,27 @@
     </div>
   </div>
   <div class="container-fluid">
-    <div class="draw-pier-wrapper row">
-      <h2> 1º passo: Desenhe seu Pier </h2>
-      <div class="col-lg-5 col-lg-push-1"> 
+    <div class="panel panel-default draw-pier-wrapper row">
+      <div class="panel-heading">
+        <h2> 1º: Desenhe seu Pier </h2>
+      </div>
+      <div class="col-lg-5 "> 
         <canvas  width="550" height="500" id="canvas"></canvas>
       </div>
       <div class= "col-lg-5 col-lg-push-1">
         <h3> Instruções </h3>
         <p> Clique duas vezes para rotacionar uma peça</p>
         <p> Clique e arraste uma peça para mover </p>
-        <p> Clique na lixeira e selecione uma peça para remover</p>
+        <p> Clique na lixeira e selecione as peças para removê-las. Desative a opção de remover peças clicando novamente na lixeira.</p>
         <div id= "select-acessories"></div>
       </div>
     </div>
     <hr>
-    <div class="acessory-wrapper row">
-      <h2> 2º passo: Escolha os Acessórios </h2>
-      <div class="col-lg-4 col-lg-push-1"> 
+    <div class="panel panel-default acessory-wrapper row">
+      <div class="panel-heading">
+        <h2> 2º: Escolha os Acessórios </h2>
+      </div>
+      <div class="col-lg-6"> 
         <div  class="menu-wrapper" >
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -63,11 +66,11 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-5 col-lg-push-2">
+      <div class="col-lg-6">
         <div class="panel panel-default list-wrapper">
-           <div class="panel-heading">
-              <h3 class="panel-title">Acessórios Selecionados</h3>
-            </div>
+          <div class="panel-heading">
+            <h3 class="panel-title">Acessórios Selecionados</h3>
+          </div>
           <div class="panel-body">
             <div id= "acessory-list"> </div>
           </div>
@@ -76,8 +79,10 @@
       </div>
     </div>
     <hr>
-    <div class="order-wrapper row">
-      <h2> 3º passo: Preencha seus dados Pessoais </h2>
+    <div class="panel panel-default order-wrapper row">
+      <div class="panel-heading">
+        <h2> 3º: Preencha seus dados Pessoais </h2>
+      </div>
       <div id= "confirm-order"> </div>
     </div>
     <hr>
