@@ -13,9 +13,9 @@ canvas:hover {
 	cursor: pointer; 
 }
 
-.draw-pier-wrapper p {
-	text-align: center;
+.draw-pier-wrapper ul li{
 	font-size: 18px;
+	padding: 5px;
 }
 
 .panel-heading {
@@ -71,6 +71,15 @@ canvas:hover {
 	font-size: 15px;
 }
 
+
+#acessory-list .qtd-title {
+	padding-left: 50px;
+}
+
+#acessory-list .remove {
+	text-align: center;
+}
+
 .list-wrapper .panel-heading {
 	margin-bottom: 0px;
 }
@@ -80,7 +89,7 @@ canvas:hover {
 }
 
 .acessory-item {
-	font-size: 18px;
+	font-size: 15px;
 }
 
 .acessory-item .glyphicon {
@@ -94,6 +103,10 @@ canvas:hover {
 
 .qtd-btn:hover {
 	cursor: pointer; 
+}
+
+.remove-btn {
+	text-align: center;
 }
 
 .remove-btn:hover {
