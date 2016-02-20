@@ -11,6 +11,6 @@
     "express": "latest",
     "moment": "^2.11.2",
     "nodemailer": "latest",
-    "npm i csv-write-stream": "1.0.0"
+    "csv-write-stream": "1.0.0"
   }
 }
