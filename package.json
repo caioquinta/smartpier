@@ -9,6 +9,8 @@
   "dependencies": {
     "body-parser": "^1.14.2",
     "express": "latest",
-    "nodemailer": "latest"
+    "moment": "^2.11.2",
+    "nodemailer": "latest",
+    "npm i csv-write-stream": "1.0.0"
   }
 }
