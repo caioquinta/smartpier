@@ -16,7 +16,7 @@ exports.sendorder = function(req) {
       to: ['caiodaquinta@gmail.com', req.body.email], // list of receivers
       subject: 'Solicitação de Pedido ' + order_number +' ✔', // Subject line
       text: 'Solicitação do Pedido ' + order_number, // plaintext body
-      html: '<h3>Dados do Cliente</h3><table><tr><td>Nome:</td><td>'+req.body.name+'</td></tr><tr><td>E-mail:</td><td>'+req.body.email+'</td></tr><tr><td>Empresa:</td><td>'+ req.body.company +'</td></tr><tr><td>Endereço:</td><td>'+req.body.address+'</td></tr><td>Telefone:</td><td>'+req.body.phone+'</td></tr></table><h3>Resumo do pedido</h3><h4>Piers</h4>'+ order_piers(req)+'<h4>Acessórios</h4>'+ order_itens(req),
+      html: '<h3>Dados do Cliente</h3><table><tr><td>Nome:</td><td>'+req.body.name+'</td></tr><tr><td>E-mail:</td><td>'+req.body.email+'</td></tr><tr><td>Empresa:</td><td>'+ req.body.company +'</td></tr><tr><td>Endereço:</td><td>'+req.body.address+'</td></tr><td>Telefone:</td><td>'+req.body.phone+'</td></tr></table><h3>Resumo do pedido '+ order_number +'</h3><h4>Piers</h4>'+ order_piers(req)+'<h4>Acessórios</h4>'+ order_itens(req),
       attachments: [{   // data uri as an attachment 
         path: req.body.pier_image
       },
