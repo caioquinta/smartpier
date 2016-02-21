@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "body-parser": "^1.14.2",
+    "csv-write-stream": "1.0.0",
     "express": "latest",
     "moment": "^2.11.2",
-    "nodemailer": "latest",
-    "csv-write-stream": "1.0.0"
+    "nodemailer": "latest"
   }
 }
