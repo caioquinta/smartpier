@@ -10,7 +10,6 @@ app.use( bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 
-
 router.use(function (req,res,next) {
   console.log("/" + req.method);
   next();

@@ -51,7 +51,9 @@ order_piers = function(req) {
 
 order_to_csv = function(req, writer, order_number) {
   writer.pipe(fs.createWriteStream('./tmp/pedido_'+ order_number +'.csv'));
-  writer.write({'col_1': "Número do Pedido", 'col_2': order_number});  
+  writer.write({'col_1': '', 'col_2': 'EASY PIER', 'col_3': '', 'col_4': ''});
+  writer.write('\n');  
+  writer.write({'col_1': "Número do Pedido", 'col_2': order_number, 'col_3': '', 'col_4': ''});  
   personal_fields_to_csv(req, writer);
   piers_to_csv(req, writer);
   acessories_to_csv(req, writer);
@@ -59,18 +61,21 @@ order_to_csv = function(req, writer, order_number) {
 }
 
 personal_fields_to_csv = function(req, writer) {
-  writer.write({'col_1': "Dados Pessoais"});
-  writer.write({'col_1': 'Nome', 'col_2': req.body.name})
-  writer.write({'col_1': 'E-mail', 'col_2': req.body.email})
-  writer.write({'col_1': 'Telefone', 'col_2': req.body.phone})
-  writer.write({'col_1': 'Endereço', 'col_2': req.body.address})
-  writer.write({'col_1': 'Empresa', 'col_2': req.body.company})
+  writer.write({'col_1': 'Cliente:', 'col_2': req.body.name })
+  writer.write({'col_1': 'Doc.CNPJ/CIC:' })
+  writer.write({'col_1': 'Doc.I.E./ RG.:' })
+  writer.write({'col_1': 'Endereço:', 'col_2': req.body.address})
+  writer.write({'col_1': 'Bairro:',   'col_2': req.body.neighbourhood, 'col_3': 'Cidade:', 'col_4': req.body.city })
+  writer.write({'col_1': 'CEP:',      'col_2': req.body.cep,           'col_3': 'Estado:', 'col_4': req.body.province })
+  writer.write({'col_1': 'Telefone:', 'col_2': req.body.phone,         'col_3': 'E-mail:', 'col_4': req.body.email })
+  writer.write({'col_1': 'Empresa:',  'col_2': req.body.company })
+  writer.write({'col_1': 'Atenção de:'})
   writer.write('\n');
 }
 
 piers_to_csv = function(req, writer){  
   writer.write({'col_1': "Piers"});
-  writer.write({'col_1': "Item", 'col_2': "Quantidade"});
+  writer.write({'col_1': "Item", 'col_2': "Quant.", 'col_3' : "Preço", 'col_4' : "IPI", 'col_5' : "Tota l"});
   for (var i in req.body.piers_selected) {
     writer.write({ 'col_1': req.body.piers_selected[i].name, 
                    'col_2': req.body.piers_selected[i].qtd});
