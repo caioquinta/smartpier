@@ -11,6 +11,7 @@
     "csv-write-stream": "1.0.0",
     "express": "latest",
     "moment": "^2.11.2",
+    "utf8": "latest",
     "nodemailer": "latest"
   }
 }

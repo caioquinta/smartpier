@@ -1,5 +1,6 @@
 var fs = require('fs');
 var moment = require('moment');
+var utf8 = require('utf8');
 
 exports.sendorder = function(req) {
   var order_number =  moment().format('DMMYYYY_Hmm');
@@ -64,11 +65,11 @@ personal_fields_to_csv = function(req, writer) {
   writer.write({'col_1': 'Cliente:', 'col_2': req.body.name })
   writer.write({'col_1': 'Doc.CNPJ/CIC:' })
   writer.write({'col_1': 'Doc.I.E./ RG.:' })
-  writer.write({'col_1': 'Endereço:', 'col_2': req.body.address})
-  writer.write({'col_1': 'Bairro:',   'col_2': req.body.neighbourhood, 'col_3': 'Cidade:', 'col_4': req.body.city })
-  writer.write({'col_1': 'CEP:',      'col_2': req.body.cep,           'col_3': 'Estado:', 'col_4': req.body.province })
-  writer.write({'col_1': 'Telefone:', 'col_2': req.body.phone,         'col_3': 'E-mail:', 'col_4': req.body.email })
-  writer.write({'col_1': 'Empresa:',  'col_2': req.body.company })
+  writer.write({'col_1': 'Endereço:', 'col_2': utf8.encode(req.body.address)})
+  writer.write({'col_1': 'Bairro:',   'col_2': utf8.encode(req.body.neighbourhood), 'col_3': 'Cidade:', 'col_4': utf8.encode(req.body.city) })
+  writer.write({'col_1': 'CEP:',      'col_2': req.body.cep,           'col_3': 'Estado:', 'col_4': utf8.encode(req.body.province) })
+  writer.write({'col_1': 'Telefone:', 'col_2': req.body.phone,         'col_3': 'E-mail:', 'col_4':utf8.encode(req.body.email) })
+  writer.write({'col_1': 'Empresa:',  'col_2': utf8.encode(req.body.company) })
   writer.write({'col_1': 'Atenção de:'})
   writer.write('\n');
 }
