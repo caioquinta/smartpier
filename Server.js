@@ -2,7 +2,7 @@ var express = require('express');
 var path = __dirname + '/views/';
 var app = express();
 var router = express.Router();
-var order = require('./files/order.js');
+var order = require('./src/order.js');
 
 var bodyParser = require('body-parser')
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
