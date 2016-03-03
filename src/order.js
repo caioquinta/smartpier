@@ -50,6 +50,11 @@ order_piers = function(req) {
   return piers_list
 }
 
+order_connectors_parts = function(req){
+  parts = calculate_connector_parts(req);
+  return '<tr style = "font-style = italic;"><td>Sapatas: '+parts['sapatas']+'</td>'+'<td> Parafusos: '+ parts['screws'] +'</td><td> Porcas: ' + parts['nuts'] +'</td></tr>'
+}
+
 order_to_csv = function(req, writer, order_number) {
   writer.pipe(fs.createWriteStream('./tmp/pedido_'+ order_number +'.csv'));
   writer.write({'col_1': '', 'col_2': 'EASY PIER', 'col_3': '', 'col_4': ''});
@@ -58,6 +63,7 @@ order_to_csv = function(req, writer, order_number) {
   personal_fields_to_csv(req, writer);
   piers_to_csv(req, writer);
   acessories_to_csv(req, writer);
+  connectors_to_csv(req, writer);
   writer.end();
 }
 
@@ -86,9 +92,27 @@ piers_to_csv = function(req, writer){
 
 acessories_to_csv = function(req, writer){
   writer.write({'col_1': "Acessórios"});
-  writer.write({'col_1': "item", 'col_2': "Quantidade"});
+  writer.write({'col_1': "Item", 'col_2': "Quant.", 'col_3' : "Preço", 'col_4' : "IPI", 'col_5' : "Tota l"});
   for (var i in req.body.itens) {
     writer.write({ 'col_1': req.body.itens[i].name, 
                    'col_2': req.body.itens[i].qtd});
   }
+  writer.write('\n');
+}
+
+connectors_to_csv = function(req, writer){
+  parts = calculate_connector_parts(req);
+  writer.write({'col_1': "Conectores", 'col_2': 'Quant.'});
+  writer.write({'col_1': "Sapatas: ", 'col_2': parts['sapatas']});
+  writer.write({'col_1': "Parafusos: ", 'col_2': parts['screws']});
+  writer.write({'col_1': "Porcas: ", 'col_2': parts['nuts']});
+}
+
+
+calculate_connector_parts = function(req){
+  var triangular_piers_qtd = 0;
+  for (var i in req.body.piers_selected) {
+    if(req.body.piers_selected[i].name == 'Pier Triangular') triangular_piers_qtd++;
+  }
+  return {'sapatas': 2*req.body.connectors_qtd - triangular_piers_qtd, 'screws': req.body.connectors_qtd, 'nuts': req.body.connectors_qtd}
 }
