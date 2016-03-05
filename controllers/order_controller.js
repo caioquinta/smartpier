@@ -17,7 +17,7 @@ exports.sendorder = function(req) {
       to: [req.body.email], // list of receivers
       subject: 'Solicitação de Pedido ' + order_number +' ✔', // Subject line
       text: 'Solicitação do Pedido ' + order_number, // plaintext body
-      html: '<h3>Dados do Cliente</h3><table><tr><td>Nome:</td><td>'+req.body.name+'</td></tr><tr><td>E-mail:</td><td>'+req.body.email+'</td></tr><tr><td>Empresa:</td><td>'+ req.body.company +'</td></tr><tr><td>Endereço:</td><td>'+req.body.address+'</td></tr><td>Telefone:</td><td>'+req.body.phone+'</td></tr></table><h3>Resumo do pedido '+ order_number +'</h3><h4>Piers</h4>'+ order_piers(req)+'<h4>Acessórios</h4>'+ order_itens(req),
+      html: '<h3>Dados do Cliente</h3><table><tr><td>Nome:</td><td>'+req.body.name+'</td></tr><tr><td>E-mail:</td><td>'+req.body.email+'</td></tr><tr><td>Empresa:</td><td>'+ req.body.company +'</td></tr><tr><td>Endereço:</td><td>'+req.body.address+'</td></tr><td>Telefone:</td><td>'+req.body.phone+'</td></tr></table><h3>Resumo do pedido '+ order_number +'</h3><h4>Piers</h4>'+ order_piers(req)+'<h4>Acessórios</h4>'+ order_itens(req)+ '<h4>Conectores</h4>'+ order_connectors_parts(req),
       attachments: [{   // data uri as an attachment 
         path: req.body.pier_image
       },
@@ -52,7 +52,7 @@ order_piers = function(req) {
 
 order_connectors_parts = function(req){
   parts = calculate_connector_parts(req);
-  return '<tr style = "font-style = italic;"><td>Sapatas: '+parts['sapatas']+'</td>'+'<td> Parafusos: '+ parts['screws'] +'</td><td> Porcas: ' + parts['nuts'] +'</td></tr>'
+  return '<tr style = "font-style = italic;"><td>Sapatas qtd:'+parts['sapatas']+'</td></tr>'+'<tr><td> Parafusos qtd:'+ parts['screws'] +'</td></tr><tr><td> Porcas  qtd:' + parts['nuts'] +'</td></tr>'
 }
 
 order_to_csv = function(req, writer, order_number) {
@@ -111,8 +111,5 @@ connectors_to_csv = function(req, writer){
 
 calculate_connector_parts = function(req){
   var triangular_piers_qtd = 0;
-  for (var i in req.body.piers_selected) {
-    if(req.body.piers_selected[i].name == 'Pier Triangular') triangular_piers_qtd++;
-  }
-  return {'sapatas': 2*req.body.connectors_qtd - triangular_piers_qtd, 'screws': req.body.connectors_qtd, 'nuts': req.body.connectors_qtd}
+  return {'sapatas': 2*(req.body.connectors_qtd - req.body.mother_connectors_qtd) +  1*req.body.mother_connectors_qtd, 'screws': req.body.connectors_qtd, 'nuts': req.body.connectors_qtd}
 }
