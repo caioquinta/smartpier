@@ -108,8 +108,6 @@ connectors_to_csv = function(req, writer){
   writer.write({'col_1': "Porcas: ", 'col_2': parts['nuts']});
 }
 
-
 calculate_connector_parts = function(req){
-  var triangular_piers_qtd = 0;
   return {'sapatas': 2*(req.body.connectors_qtd - req.body.mother_connectors_qtd) +  1*req.body.mother_connectors_qtd, 'screws': req.body.connectors_qtd, 'nuts': req.body.connectors_qtd}
 }
