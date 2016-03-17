@@ -17,12 +17,12 @@ router.use(function (req,res,next) {
 });
 
 router.get("/",function(req,res){
-  res.sendFile(path + "index.html");
+  res.sendFile(path + "pedido.html");
 });
 
 app.post('/sendorder', function (req, res) {
   order.sendorder(req);
-  res.sendFile(path + "index.html");
+  res.sendFile(path + "pedido.html");
 }); 
 
 app.use("/",router);

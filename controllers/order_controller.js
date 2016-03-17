@@ -9,11 +9,11 @@ exports.sendorder = function(req) {
   order_to_csv(req, writer, order_number);
   var nodemailer = require('nodemailer');
   // create reusable transporter object using the default SMTP transport
-  var transporter = nodemailer.createTransport('smtps://caiodaquinta@gmail.com:hagane22222@smtp.gmail.com');
+  var transporter = nodemailer.createTransport('smtps://smartpierheroku@gmail.com:senhaheroku@smtp.gmail.com');
 
   // setup e-mail data with unicode symbols
   var mailOptions = {
-      from: 'Caio <caiodaquinta@gmail.com>', // sender address
+      from: 'SmartPier <smartpierheroku@gmail.com>', // sender address
       to: [req.body.email], // list of receivers
       subject: 'Solicitação de Pedido ' + order_number +' ✔', // Subject line
       text: 'Solicitação do Pedido ' + order_number, // plaintext body
