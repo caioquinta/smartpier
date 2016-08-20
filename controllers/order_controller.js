@@ -9,7 +9,13 @@ exports.sendorder = function(req) {
   order_to_csv(req, writer, order_number);
   var nodemailer = require('nodemailer');
   // create reusable transporter object using the default SMTP transport
-  var transporter = nodemailer.createTransport('smtps://smartpierheroku@gmail.com:senhaheroku@smtp.gmail.com');
+  var transporter = nodemailer.createTransport({
+  service: 'Gmail',
+    auth: {
+      user: 'smartpierheroku@gmail.com',
+      pass: 'senhaheroku'
+    }
+  });
 
   // setup e-mail data with unicode symbols
   var mailOptions = {
@@ -25,7 +31,6 @@ exports.sendorder = function(req) {
         path: './tmp/pedido_'+ order_number +'.csv'
       }]
     };
-
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function(error, info){
       if(error){
