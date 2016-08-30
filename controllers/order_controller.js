@@ -10,12 +10,13 @@ exports.sendorder = function(req) {
   var nodemailer = require('nodemailer');
   // create reusable transporter object using the default SMTP transport
   var transporter = nodemailer.createTransport({
-  service: 'Gmail',
+    service: 'Hotmail',
     auth: {
-      user: 'smartpierheroku@gmail.com',
-      pass: 'senhaheroku'
+      user: 'fernando_smartpier@hotmail.com',
+      pass: 'Smartpier'
     }
   });
+
 
   // setup e-mail data with unicode symbols
   var mailOptions = {
