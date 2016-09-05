@@ -8,20 +8,21 @@ exports.sendorder = function(req) {
   var writer = csvWriter({sendHeaders: false});
   order_to_csv(req, writer, order_number);
   var nodemailer = require('nodemailer');
+  console.log(process.env.EMAIL);
   // create reusable transporter object using the default SMTP transport
   var transporter = nodemailer.createTransport({
     service: 'Hotmail',
     auth: {
-      user: 'fernando_smartpier@hotmail.com',
-      pass: 'Smartpier'
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_SENHA
     }
   });
 
 
   // setup e-mail data with unicode symbols
   var mailOptions = {
-      from: 'fernando_smartpier@hotmail.com', // sender address
-      to: [req.body.email]+',vendas@smartpier.com', // list of receivers
+      from: process.env.EMAIL, // sender address
+      to: [req.body.email], // list of receivers
       subject: 'Solicitação de Pedido ' + order_number +' ✔', // Subject line
       text: 'Solicitação do Pedido ' + order_number, // plaintext body
       html: '<h3>Dados do Cliente</h3><table><tr><td>Nome:</td><td>'+req.body.name+'</td></tr><tr><td>E-mail:</td><td>'+req.body.email+'</td></tr><tr><td>Empresa:</td><td>'+ req.body.company +'</td></tr><tr><td>Endereço:</td><td>'+req.body.address+'</td></tr><td>Telefone:</td><td>'+req.body.phone+'</td></tr></table><h3>Resumo do pedido '+ order_number +'</h3><h4>Piers</h4>'+ order_piers(req)+'<h4>Acessórios</h4>'+ order_itens(req)+ '<h4>Conectores</h4>'+ order_connectors_parts(req),
