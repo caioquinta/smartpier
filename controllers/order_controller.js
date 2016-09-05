@@ -11,7 +11,7 @@ exports.sendorder = function(req) {
   console.log(process.env.EMAIL);
   // create reusable transporter object using the default SMTP transport
   var transporter = nodemailer.createTransport({
-    service: 'Hotmail',
+    service: process.env.EMAIL_SERVICE,
     auth: {
       user: process.env.EMAIL,
       pass: process.env.EMAIL_SENHA
