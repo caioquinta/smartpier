@@ -8,11 +8,12 @@ exports.sendorder = function(req) {
   var writer = csvWriter({sendHeaders: false});
   order_to_csv(req, writer, order_number);
   var nodemailer = require('nodemailer');
-  console.log(process.env.EMAIL);
   // create reusable transporter object using the default SMTP transport
   var transporter = nodemailer.createTransport({
-    service: process.env.EMAIL_SERVICE,
-    auth: {
+      host: 'email-ssl.com.br',
+      port: 465,
+      secure: true,
+      auth: {
       user: process.env.EMAIL,
       pass: process.env.EMAIL_SENHA
     }
